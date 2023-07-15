@@ -4,7 +4,12 @@ drivingAgeVerificationSubmitBtn.addEventListener("click", (ev) => {
     const userAgeValue = document.getElementById("user_age").value == "" ? null : Number(document.getElementById("user_age").value);
     const drivingAgeVerificationResultDiv = document.getElementById("driving_age_verification_result");
 
-    if (userAgeValue != null && userAgeValue < 1) {
+    if (!Number.isInteger(userAgeValue))
+    {
+        drivingAgeVerificationResultDiv.style.color = "red";
+        drivingAgeVerificationResultDiv.innerHTML = `Invalid Data (Input field must be an integer value)`;
+    }
+    else if (userAgeValue != null && userAgeValue < 1) {
         drivingAgeVerificationResultDiv.style.color = "red";
         drivingAgeVerificationResultDiv.innerHTML = `Invalid Data (Your age must be greater than 0)`;
     }
