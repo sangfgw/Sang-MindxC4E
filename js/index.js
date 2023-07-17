@@ -1,7 +1,7 @@
 /* 1. Driving Age Verification Program */
 const drivingAgeVerificationSubmitBtn = document.getElementById("driving_age_verification_submit");
 drivingAgeVerificationSubmitBtn.addEventListener("click", (ev) => {
-    const userAgeValue = document.getElementById("user_age").value == "" ? null : Number(document.getElementById("user_age").value);
+    const userAgeValue = document.getElementById("user_age").value === "" ? null : Number(document.getElementById("user_age").value);
     const drivingAgeVerificationResultDiv = document.getElementById("driving_age_verification_result");
 
     if (!Number.isInteger(userAgeValue))
@@ -35,14 +35,14 @@ function isValidDrivingAge(age) {
 /* 2. Negative, Positive or Neutral number Checking */
 const numberCheckingSubmitBtn = document.getElementById("number_checking_submit");
 numberCheckingSubmitBtn.addEventListener("click", (ev) => {
-    const numberCheckingValue = document.getElementById("number_checking").value == "" ? null : Number(document.getElementById("number_checking").value);
+    const numberCheckingValue = document.getElementById("number_checking").value === "" ? null : Number(document.getElementById("number_checking").value);
     const numberCheckingResultDiv = document.getElementById("number_checking_result");
 
     if (numberCheckingValue != null && numberMarkVerify(numberCheckingValue) > 0) {
         numberCheckingResultDiv.style.color = "green";
         numberCheckingResultDiv.innerHTML = `${numberCheckingValue} is a positive number`;
     }
-    else if (numberCheckingValue != null && numberMarkVerify(numberCheckingValue) == 0) {
+    else if (numberCheckingValue != null && numberMarkVerify(numberCheckingValue) === 0) {
         numberCheckingResultDiv.style.color = "green";
         numberCheckingResultDiv.innerHTML = `${numberCheckingValue} is a neutral number`;
     }
@@ -58,13 +58,13 @@ numberCheckingSubmitBtn.addEventListener("click", (ev) => {
 
 // Function: If number < 0 (return -1), else if number = 0 (return 0), else return 1
 function numberMarkVerify(number) {
-    return number < 0 ? -1 : number == 0 ? 0 : 1;
+    return number < 0 ? -1 : number === 0 ? 0 : 1;
 }
 
 /* 3. Program checking whether input number can divide 3 and 5 or not */
 const numberDivideCheckingSubmitBtn = document.getElementById("number_divide_checking_submit");
 numberDivideCheckingSubmitBtn.addEventListener("click", (ev) => {
-    const numberDivideCheckingValue = document.getElementById("number_divide_checking").value == "" ? null : Number(document.getElementById("number_divide_checking").value);
+    const numberDivideCheckingValue = document.getElementById("number_divide_checking").value === "" ? null : Number(document.getElementById("number_divide_checking").value);
     const numberDivideCheckingResultDiv = document.getElementById("number_divide_checking_result");
 
     if (numberDivideCheckingValue != null && isDivideThreeAndFive(numberDivideCheckingValue)) {
@@ -83,20 +83,20 @@ numberDivideCheckingSubmitBtn.addEventListener("click", (ev) => {
 
 // Function: If number can divide 3 and 5 (valid), else (invalid)
 function isDivideThreeAndFive(number) {
-    return number % 3 == 0 && number % 5 == 0 ? true : false;
+    return number % 3 === 0 && number % 5 === 0 ? true : false;
 }
 
 /* 4. Day of the Week Checking Program */
 const dayOfWeekNumberSubmitBtn = document.getElementById("day_of_week_number_submit");
 dayOfWeekNumberSubmitBtn.addEventListener("click", (ev) => {
-    const dayOfWeekNumber = document.getElementById("day_of_week_number").value == "" ? null : Number(document.getElementById("day_of_week_number").value);
+    const dayOfWeekNumber = document.getElementById("day_of_week_number").value === "" ? null : Number(document.getElementById("day_of_week_number").value);
     const dayOfWeekNumberResultDiv = document.getElementById("day_of_week_number_result");
 
     if (dayOfWeekNumber != null && dayOfWeek(dayOfWeekNumber) != null) {
         dayOfWeekNumberResultDiv.style.color = "green";
         dayOfWeekNumberResultDiv.innerHTML = `Number ${dayOfWeekNumber} corresponds to: ${dayOfWeek(dayOfWeekNumber)}`;
     }
-    else if (dayOfWeekNumber != null && dayOfWeek(dayOfWeekNumber) == null) {
+    else if (dayOfWeekNumber != null && dayOfWeek(dayOfWeekNumber) === null) {
         dayOfWeekNumberResultDiv.style.color = "red";
         dayOfWeekNumberResultDiv.innerHTML = `Invalid Data, Your Input Field Must Be In Range 1 to 7`;
     }
@@ -131,7 +131,7 @@ function dayOfWeek(day) {
 /* 5. Sum of 1 to N */
 const sumNumberSubmitBtn = document.getElementById("sum_number_submit");
 sumNumberSubmitBtn.addEventListener("click", (ev) => {
-    const sumNumber = document.getElementById("sum_number").value == "" ? null : Number(document.getElementById("sum_number").value);
+    const sumNumber = document.getElementById("sum_number").value === "" ? null : Number(document.getElementById("sum_number").value);
     const sumNumberResultDiv = document.getElementById("sum_number_result");
 
     if (sumNumber != null && Number.isInteger(sumNumber)) {
@@ -179,14 +179,14 @@ inputEndRangeNumber.addEventListener("input", (ev) => {
 });
 
 // Skip Number
-let skipNumber = document.getElementById("skip_number").value == "" ? null : Number.isInteger(Number(document.getElementById("skip_number").value)) ? Number(document.getElementById("skip_number").value) : null;
+let skipNumber = document.getElementById("skip_number").value === "" ? null : Number.isInteger(Number(document.getElementById("skip_number").value)) ? Number(document.getElementById("skip_number").value) : null;
 
 // Listen Click Submit Button
 const rangeSkipNumberSubmitBtn = document.getElementById("range_skip_number_submit");
 const rangeSkipNumberResultDiv = document.getElementById("range_skip_number_result");
 
 rangeSkipNumberSubmitBtn.addEventListener("click", (ev) => {
-    skipNumber = document.getElementById("skip_number").value == "" ? null : Number.isInteger(Number(document.getElementById("skip_number").value)) ? Number(document.getElementById("skip_number").value) : null;
+    skipNumber = document.getElementById("skip_number").value === "" ? null : Number.isInteger(Number(document.getElementById("skip_number").value)) ? Number(document.getElementById("skip_number").value) : null;
     if (skipNumber != null) {
         rangeSkipNumberResultDiv.style.color = "green";
         rangeSkipNumberResultDiv.innerHTML = "";
@@ -206,7 +206,7 @@ if (skipNumber != null) {
 // Function: Loop From start to end number with skip value
 function printLoopSkipNumber(startNum, endNum, skipNum) {
     for (; startNum <= endNum; startNum++) {
-        if (startNum == skipNum) {
+        if (startNum === skipNum) {
             continue;
         }
         rangeSkipNumberResultDiv.style.color = "green";
@@ -215,7 +215,7 @@ function printLoopSkipNumber(startNum, endNum, skipNum) {
 
     // // While Method
     // while (startNum <= endNum) {
-    //     if (startNum == skipNum) {
+    //     if (startNum === skipNum) {
     //         startNum++;
     //         continue;
     //     }
@@ -245,14 +245,14 @@ inputEndRangeDivideNumber.addEventListener("input", (ev) => {
 });
 
 // Divide Number
-let divideNumber = document.getElementById("divide_number").value == "" ? null : Number.isInteger(Number(document.getElementById("divide_number").value)) ? Number(document.getElementById("divide_number").value) : null;
+let divideNumber = document.getElementById("divide_number").value === "" ? null : Number.isInteger(Number(document.getElementById("divide_number").value)) ? Number(document.getElementById("divide_number").value) : null;
 
 // Listen Click Submit Button
 const rangeDivideNumberSubmitBtn = document.getElementById("range_divide_number_submit");
 const rangeDivideNumberResultDiv = document.getElementById("range_divide_number_result");
 
 rangeDivideNumberSubmitBtn.addEventListener("click", (ev) => {
-    divideNumber = document.getElementById("divide_number").value == "" ? null : Number.isInteger(Number(document.getElementById("divide_number").value)) ? Number(document.getElementById("divide_number").value) : null;
+    divideNumber = document.getElementById("divide_number").value === "" ? null : Number.isInteger(Number(document.getElementById("divide_number").value)) ? Number(document.getElementById("divide_number").value) : null;
     if (divideNumber != null && divideNumber > 0) {
         rangeDivideNumberResultDiv.style.color = "green";
         rangeDivideNumberResultDiv.innerHTML = "";
@@ -273,13 +273,13 @@ if (divideNumber != null) {
     printFirstDivideNumber(Number(inputStartRangeDivideNumber.value), Number(inputEndRangeDivideNumber.value), divideNumber);
 }
 
-// Function: Loop From start to end number and divide the given value if number % 2 == 0 then print it and break loop;
+// Function: Loop From start to end number and divide the given value if number % 2 === 0 then print it and break loop;
 function printFirstDivideNumber(startNum, EndNum, divideNum) {
     rangeDivideNumberResultDiv.style.color = "green";
     rangeDivideNumberResultDiv.innerHTML = `First Number That Can Divide ${divideNum}: `;
 
     for (; startNum <= EndNum ; startNum++) {
-        if (startNum % divideNum == 0) {
+        if (startNum % divideNum === 0) {
             rangeDivideNumberResultDiv.innerHTML += `${startNum}<br>`;
             break;
         }
@@ -287,7 +287,7 @@ function printFirstDivideNumber(startNum, EndNum, divideNum) {
 
     // // While Loop Method
     // while (startNum <= EndNum) {
-    //     if (startNum % divideNum == 0) {
+    //     if (startNum % divideNum === 0) {
     //         rangeDivideNumberResultDiv.innerHTML += `${startNum}<br>`;
     //         break;
     //     }
