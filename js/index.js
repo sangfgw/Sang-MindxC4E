@@ -106,7 +106,7 @@ funcLessonObj(array2).forEach((objItem, objIndex) => {
 
 document.write(
     `
-    <div>{</div>
+    <div>}</div>
 `);
 
 // document.write(
