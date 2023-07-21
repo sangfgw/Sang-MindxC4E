@@ -11,7 +11,7 @@ function sortArrASC(arr) {
     const objArr = [];
 
     arr.forEach(item => {
-        if (typeof item == "object") {
+        if (typeof item === "object") {
 
             // loop throught each object inside array
             item.map(objItem => {
