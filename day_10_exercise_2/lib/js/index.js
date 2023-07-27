@@ -194,7 +194,7 @@ function gameWinner() {
     if (confirm(`
     You Win! The Answer Is: ${answerObj.words}
     Do You Want To Play Again?`)) {
-        window.location.href = "/";
+        window.location.href = "index.html";
     }
 }
 
@@ -205,7 +205,7 @@ function gameLose() {
 
     // Show Confirm Box
     if(confirm(`Game Over! Do you want to restart the game?`)) {
-        window.location.href = "/";
+        window.location.href = "index.html";
     };
 }
 
