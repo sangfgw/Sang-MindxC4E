@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 Day 10</title>
+
+    <!-- Exernal CSS File -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <h1 class="header_title">⭐ Guess the word ⭐</h1>
+    </header>
+    <section>
+        <div class="answer">
+            <h2 class="instruction_title">Start your game by typing to the input below</h2>
+            <div class="answer__input" id="answer_blocks">
+            </div>
+            <div class="answer__hint">
+                <em id="answer_hint_content">Hint: ...</em>
+            </div>
+        </div>
+
+        <div class="space"></div>
+
+        <!-- User Input Word -->
+        <div class="user_guess">
+            <h3 class="user_guess__remain">You have <span class="user_guess__remain__value"
+                    id="user_guess_remain">0</span> guess(es) remaining</h3>
+            <form action="" method="post" class="user_guess__form" id="guess_form">
+                <div class="input_group input_group--vertical">
+                    <label for="user_guess_input" class="user_guess__form__label">Type one letter</label>
+                    <input type="text" class="answer__input__block user_guess__form__input" id="user_guess_input"
+                        maxlength="1" />
+                    <button type="submit" class="user_guess__form__submit-btn">Guess</button>
+                </div>
+            </form>
+
+            <!-- Display User Guess Result With JS -->
+            <div class="user_guess__result" id="guess_result"></div>
+        </div>
+    </section>
+    <div class="time_remain">
+        <p class="time_remain__content">Time left: <span class="timeLeft" id="time_left">0</span>s</p>
+    </div>
+
+    <!-- External JS Script -->
+    <script type="text/javascript" src="lib/js/index.js"></script>
+</body>
+
+</html>
